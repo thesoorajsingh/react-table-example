@@ -1,2 +1,5 @@
 # react-table-example
-Created with CodeSandbox
+This Project was Created with CodeSandbox
+
+
+Edit or make a run at the code on https://codesandbox.io/s/github/thesoorajsingh/react-table-example !
