@@ -1,20 +1,21 @@
 import "./styles.css";
 import { useTable } from "react-table";
 import { COLUMNS } from "./columns";
-import { DATA } from "./data";
+import { fetchData } from "./data";
 import { useEffect, useMemo, useState } from "react";
+
 export default function App() {
-  const [data, setData] = useState(DATA);
+  const [page, setPage] = useState(1);
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    console.log(fetchData(page));
+  }, [page]);
 
   const columns = useMemo(() => COLUMNS, []);
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow
-  } = useTable({ columns, data });
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    useTable({ columns, data });
 
   return (
     <div className="App">
